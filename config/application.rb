@@ -64,5 +64,15 @@ module StartupSoccerManager
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    # Configure the default template engine
+    config.generators do |g|
+      g.template_engine :slim
+    end
+    
+    # Configure the default object creation strategy for testing
+    config.generators do |g|
+      g.fixture_replacement :factory_girl
+    end
   end
 end
