@@ -2,7 +2,11 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
 
+gem 'libv8'
 gem 'slim', '1.3.4'
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
 
 gem 'jquery-rails', '2.1.4'
 
