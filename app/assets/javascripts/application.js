@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ./lib/underscore-min
+//= require ./lib/backbone-min
+//= require ./backbone/startup_soccer_manager
 //= require twitter/bootstrap
 //= require_tree .
