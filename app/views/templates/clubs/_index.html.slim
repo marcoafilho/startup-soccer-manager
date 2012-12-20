@@ -1,0 +1,12 @@
+script#clubs_template type="text/template"
+  table.table
+    tbody
+    thead
+      tr
+        th
+          = Club.human_attribute_name(:name)
+        th
+          = Club.human_attribute_name(:founded_at)
+        th
+          = t('.actions')
+  = link_to t('.new'), "#new", class: "btn btn-primary"

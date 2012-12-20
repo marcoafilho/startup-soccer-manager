@@ -1,0 +1,12 @@
+#clubs
+
+= render "templates/clubs/index"
+= render "templates/clubs/club"
+= render "templates/clubs/new"
+= render "templates/clubs/edit"
+
+javascript:
+  (function(){
+    window.router = new StartupSoccerManager.Routers.ClubsRouter( { clubs: #{@clubs.to_json.html_safe} } );
+    Backbone.history.start();
+  })();
