@@ -1,4 +1,6 @@
 script#players_template type="text/template"
+  h1= t('.title')
+  
   table.table
     thead
       tr
@@ -11,9 +13,9 @@ script#players_template type="text/template"
         th
           = Player.human_attribute_name(:number)
         th
-          = t('.average')
+          = Player.human_attribute_name(:average)
         th
-          = t('.actions')
+          = t('common.manage.actions')
     tbody
     
-  = link_to "New", "#new", class: "btn btn-primary"
+  = link_to t('common.manage.new'), "#new", class: "btn btn-primary"

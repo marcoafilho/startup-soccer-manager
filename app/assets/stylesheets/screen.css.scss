@@ -1,6 +1,22 @@
-// Place all the styles related to the Clubs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  background: url("grass-texture-24x24.jpg");
+  background: url("grass-texture-2-48x48.png");
+  background-repeat: repeat;
+}
+
+.container {
+  background-color: white;
+  margin-top: 20px;
+  padding: 20px 20px;
+  
+  -moz-box-shadow: 5px 0px 0px 0px;
+  -webkit-box-shadow: 5px 0px 0px 0px;
+  border-radius: 5px 0px 0px 0px;
+  // TODO Maybe use compass for cross-browser fixes  
+  -moz-box-shadow: 5px 5px 2px #333;
+  -webkit-box-shadow: 5px 5px 2px #333;
+  box-shadow: 5px 5px 2px #333;
+}
+
+.content {
+  padding: 10px 40px;
 }

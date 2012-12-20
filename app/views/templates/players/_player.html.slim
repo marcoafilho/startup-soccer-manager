@@ -10,7 +10,8 @@ script#player_template type="text/template"
   td
     <%= average() %>
   td
-    a.btn.btn-edit href="#<%= id %>/edit"
-      = t('.edit')
-    a.btn.btn-danger.btn-destroy href="#<%= id %>"  
-      = t('.destroy')
+    .btn-group
+      a.btn.btn-small.btn-edit href="#<%= id %>/edit"
+        = t('common.manage.edit')
+      a.btn.btn-small.btn-danger.btn-destroy href="#<%= id %>"  
+        = t('common.manage.destroy')
