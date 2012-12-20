@@ -5,6 +5,17 @@ class StartupSoccerManager.Views.Clubs.Club extends Backbone.View
   
   template: 'club_template'
   
+  events:
+    'click .btn-destroy': 'destroy'
+    
+  edit: ->
+    
+  destroy: ->
+    @model.destroy()
+    @remove()
+    
+    return false
+  
   render: =>
     @$el.html( template(@template)(@model.toJSON()) )
     

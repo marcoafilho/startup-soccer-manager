@@ -3,3 +3,8 @@ script#club_template type="text/template"
     <%= name %>
   td
     <%= founded_at %>
+  td
+    a.btn.btn-warning.btn-edit href="#<%= id %>/edit"
+      = t('.edit')
+    a.btn.btn-danger.btn-destroy href="#<%= id %>"
+      = t('.destroy')

@@ -18,4 +18,33 @@ class ClubsController < ApplicationController
     
     respond_with @club
   end
+  
+  def create
+    @club = Club.new(params[:club])
+    
+    if @club.save
+      respond_with @club, status: :created
+    end
+  end
+  
+  def edit
+    @club = Club.find(params[:id])
+  
+    respond_with @club
+  end
+  
+  def update
+    @club = Club.find(params[:id])
+    
+    if @club.update_attributes params[:club]
+      respond_with @club
+    end
+  end
+  
+  def destroy
+    @club = Club.find(params[:id])
+    @club.destroy
+    
+    respond_with @club
+  end
 end

@@ -7,3 +7,6 @@ script#clubs_template type="text/template"
           = Club.human_attribute_name(:name)
         th
           = Club.human_attribute_name(:founded_at)
+        th
+          = t('.actions')
+  = link_to t('.new'), "#new", class: "btn btn-primary"
