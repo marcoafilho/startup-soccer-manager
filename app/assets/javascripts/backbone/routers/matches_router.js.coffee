@@ -4,8 +4,14 @@ class StartupSoccerManager.Routers.MatchesRouter extends Backbone.Router
     @matches.reset(options.matches)
     
   routes:
+    "index": "index"
     "new": "newMatch"
     ":id/edit": "edit"
+    ".*": "index"
+    
+  index: ->
+    @view = new StartupSoccerManager.Views.Matches.Index( collection: @matches )
+    @display()
     
   newMatch: -> 
     @view = new StartupSoccerManager.Views.Matches.New( collection: @matches )

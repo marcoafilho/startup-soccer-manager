@@ -1,0 +1,19 @@
+script#matches_template type="text/template"
+  table.table
+    thead
+      tr
+        th
+          = Match.human_attribute_name(:host_id)
+        th
+          = t('.score')
+        th
+          = Match.human_attribute_name(:guest_id)
+        th
+          = Match.human_attribute_name(:location)
+        th
+          = Match.human_attribute_name(:played_at)
+        th
+          = t('.actions')
+    tbody
+    
+  = link_to t('.new'), "#new"
