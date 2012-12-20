@@ -1,6 +1,5 @@
 script#clubs_template type="text/template"
   table.table
-    tbody
     thead
       tr
         th
@@ -9,4 +8,5 @@ script#clubs_template type="text/template"
           = Club.human_attribute_name(:founded_at)
         th
           = t('.actions')
+    tbody
   = link_to t('.new'), "#new", class: "btn btn-primary"

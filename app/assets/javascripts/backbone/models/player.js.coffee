@@ -15,3 +15,9 @@ class StartupSoccerManager.Models.Player extends Backbone.Model
     balance: 5
     marking: 5
     stamina: 5
+    
+  initialize: ->
+    _.bindAll(this, "average")
+  
+  average: ->
+    return (@get('acceleration') + @get('aggression') + @get('balance') + @get('marking') + @get('stamina')) / 5
