@@ -6,7 +6,6 @@
 = render "templates/clubs/edit"
 
 javascript:
-  (function(){
+  (function() {
     window.router = new StartupSoccerManager.Routers.ClubsRouter( { clubs: #{@clubs.to_json.html_safe} } );
-    Backbone.history.start();
   })();

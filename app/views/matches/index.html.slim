@@ -1,0 +1,13 @@
+h1 Matches
+
+#matches
+
+= link_to t('.new'), "#new"
+
+= render "templates/matches/new"
+= render "templates/matches/edit"
+
+javascript:
+  (function() {
+    window.router = new StartupSoccerManager.Routers.MatchesRouter( { matches: #{@matches.to_json.html_safe} } );
+  })();

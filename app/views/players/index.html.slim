@@ -10,5 +10,4 @@ h1 Players
 javascript:
   (function(){
     window.router = new StartupSoccerManager.Routers.PlayersRouter( { players: #{@players.to_json.html_safe} } );
-    Backbone.history.start();
   })();

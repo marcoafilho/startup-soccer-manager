@@ -1,6 +1,7 @@
 StartupSoccerManager::Application.routes.draw do
   resources :clubs
   resources :players
+  resources :matches
   
   root to: "clubs#index"
   # The priority is based upon order of creation:

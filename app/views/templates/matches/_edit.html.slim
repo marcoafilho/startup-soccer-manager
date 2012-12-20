@@ -1,0 +1,7 @@
+script#edit_match_template type="text/template"
+  = form_for :match do |f|
+    = f.label :host_score
+    = f.number_field :host_score, min: 0, value: "<%= host_score %>".html_safe
+    = f.label :guest_score
+    = f.number_field :guest_score, min: 0, value: "<%= guest_score %>".html_safe
+    = f.submit
