@@ -1,0 +1,27 @@
+= form_for :player do |f|
+  = f.label :last_name
+  = f.text_field :last_name, value: "<%= last_name %>".html_safe
+  = f.label :first_name
+  = f.text_field :first_name, value: "<%= first_name %>".html_safe
+  = f.label :born_at
+  = f.text_field :born_at, value: "<%= born_at %>".html_safe
+  = f.label :number
+  = f.number_field :number, min: 0, max: 99, value: "<%= number %>".html_safe
+  = f.label :position
+  = f.select :position, Player::POSITIONS.collect { |k, v| ["#{k} - #{v}", k] }
+  = f.label :gender
+  = f.radio_button :gender, "true"
+  = f.label :gender_true, t('.male')
+  = f.radio_button :gender, "false"
+  = f.label :gender_false, t('.female')
+  = f.label :acceleration
+  = f.number_field :acceleration, min: 0, max: 10, value: "<%= acceleration %>".html_safe
+  = f.label :aggression
+  = f.number_field :aggression, min: 0, max: 10, value: "<%= aggression %>".html_safe
+  = f.label :balance
+  = f.number_field :balance, min: 0, max: 10, value: "<%= balance %>".html_safe
+  = f.label :marking
+  = f.number_field :marking, min: 0, max: 10, value: "<%= marking %>".html_safe
+  = f.label :stamina
+  = f.number_field :stamina, min: 0, max: 10, value: "<%= stamina %>".html_safe
+  = f.submit

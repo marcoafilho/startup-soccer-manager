@@ -1,7 +1,7 @@
 StartupSoccerManager.Views.Clubs ||= {}
 
 class StartupSoccerManager.Views.Clubs.New extends Backbone.View
-  className: 'clubs-new'
+  className: "clubs-new"
   
   template: "new_club_template"
   
@@ -13,7 +13,7 @@ class StartupSoccerManager.Views.Clubs.New extends Backbone.View
     @model = new @collection.model()
       
   render: ->
-    @$el.html( template(@template)(@model.toJSON() ) )
+    @$el.html( template(@template)(@model.toJSON()) )
     
     return this
     
@@ -21,8 +21,8 @@ class StartupSoccerManager.Views.Clubs.New extends Backbone.View
     e.preventDefault()
     
     @model.set 
-      name: $('#club_name').val()
-      founded_at: $('#club_founded_at').val()
+      name: @$('#club_name').val()
+      founded_at: @$('#club_founded_at').val()
       
     @collection.create( @model.toJSON(),
       success: (club) =>
