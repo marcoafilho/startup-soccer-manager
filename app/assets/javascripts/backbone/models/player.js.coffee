@@ -20,4 +20,7 @@ class StartupSoccerManager.Models.Player extends Backbone.Model
     _.bindAll(this, "average")
   
   average: ->
-    return (@get('acceleration') + @get('aggression') + @get('balance') + @get('marking') + @get('stamina')) / 5
+    return  @skillsSum() / 5
+    
+  skillsSum: ->
+    return parseInt(@get('acceleration')) + parseInt(@get('aggression')) + parseInt(@get('balance')) + parseInt(@get('marking')) + parseInt(@get('stamina'))

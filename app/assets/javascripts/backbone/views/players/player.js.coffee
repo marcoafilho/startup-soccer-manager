@@ -5,7 +5,16 @@ class StartupSoccerManager.Views.Players.Player extends Backbone.View
 
   template: "player_template"
   
-  render: ->
+  events:
+    'click .btn-destroy': 'destroy'
+    
+  destroy: ->
+    @model.destroy()
+    @remove()
+
+    return false
+  
+  render: =>
     @$el.html( template(@template)(@model) )
     
     return this

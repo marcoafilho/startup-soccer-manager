@@ -8,8 +8,6 @@ class StartupSoccerManager.Views.Clubs.Club extends Backbone.View
   events:
     'click .btn-destroy': 'destroy'
     
-  edit: ->
-    
   destroy: ->
     @model.destroy()
     @remove()
