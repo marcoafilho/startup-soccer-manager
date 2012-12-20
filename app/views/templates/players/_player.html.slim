@@ -1,0 +1,16 @@
+script#player_template type="text/template"
+  td
+    <%= get('last_name') %>
+  td
+    <%= get('first_name') %>
+  td
+    <%= get('position') %>
+  td
+    <%= get('number') %>
+  td
+    <%= average() %>
+  td
+    a.btn.btn-edit href="#<%= id %>/edit"
+      = t('.edit')
+    a.btn.btn-danger.btn-destroy href="#<%= id %>"  
+      = t('.destroy')

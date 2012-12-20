@@ -4,16 +4,24 @@ class StartupSoccerManager.Routers.PlayersRouter extends Backbone.Router
     @players.reset options.players
   
   routes:
+    "index"   : "index"
     "new"     : "newPlayer"
     ":id/edit": "edit"
+    ".*"      : "index"
+    
+  index: ->
+    @view = new StartupSoccerManager.Views.Players.Index( collection: @players )
+    @display()
     
   newPlayer: ->
     @view = new StartupSoccerManager.Views.Players.New( collection: @players )
-    $('#players').html( @view.render().el )
+    @display()
     
   edit: (id) ->
     player = @players.get(id)
     
     @view = new StartupSoccerManager.Views.Players.Edit( model: player )
-    $('#players').html( @view.render().el )
+    @display()
     
+  display: ->
+    $('#players').html( @view.render().el )

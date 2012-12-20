@@ -1,0 +1,19 @@
+script#players_template type="text/template"
+  table.table
+    thead
+      tr
+        th
+          = Player.human_attribute_name(:last_name)
+        th
+          = Player.human_attribute_name(:first_name)
+        th
+          = Player.human_attribute_name(:position)
+        th
+          = Player.human_attribute_name(:number)
+        th
+          = t('.average')
+        th
+          = t('.actions')
+    tbody
+    
+  = link_to "New", "#new", class: "btn btn-primary"
