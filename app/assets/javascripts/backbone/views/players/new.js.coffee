@@ -45,7 +45,7 @@ class StartupSoccerManager.Views.Players.New extends Backbone.View
       stamina:      @$('#player_stamina').val()
       
   buildPlayerCard: ->
-    @modelObserver ||= $.extend(true, {}, @model)
+    @modelObserver ||= new StartupSoccerManager.Models.Player(@model.toJSON())
     @playerCard ||= new StartupSoccerManager.Views.Players.Show( model: @modelObserver )
     @playerCard.model = @modelObserver
     @$('.player-previewer table').stickyScroll( mode: 'manual', topBoundary: 190 )
