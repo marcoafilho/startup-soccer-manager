@@ -3,6 +3,10 @@ body {
   background-repeat: repeat;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 .container {
   background-color: white;
   margin-top: 20px;
@@ -19,4 +23,45 @@ body {
 
 .content {
   padding: 10px 40px;
+}
+
+.soccer-manager-form {
+  .inline-block {
+    display: inline-block;
+  }
+
+  .padded-right {
+    margin-right: 10px;
+  }
+  
+  .padded-left {
+    margin-left: 10px;
+  }
+  
+  .margin-bottom {
+    margin-bottom: 20px;
+  }
+}
+
+.input-prepend {
+  .add-on {
+    margin-top: 1px;
+  }
+}
+
+.form-actions {
+  .btn {
+    margin: 0px 1px;
+  }
+}
+
+.navbar {
+  .navbar-inner {
+    .brand {
+      background: url('soccer-ball.png') no-repeat;
+      background-position: 0 48%;
+      margin-left: 5px;
+      padding-left: 20px;
+    }
+  }
 }

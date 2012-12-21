@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121220192354) do
+ActiveRecord::Schema.define(:version => 20121221180050) do
 
   create_table "clubs", :force => true do |t|
     t.string   "name",       :null => false
@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(:version => 20121220192354) do
 
   create_table "players", :force => true do |t|
     t.integer  "club_id"
-    t.string   "first_name",                     :null => false
-    t.string   "last_name",                      :null => false
+    t.string   "first_name",                          :null => false
+    t.string   "last_name",                           :null => false
     t.datetime "born_at"
-    t.boolean  "gender",       :default => true
+    t.boolean  "gender",            :default => true
     t.string   "position"
     t.integer  "number"
     t.integer  "acceleration"
@@ -49,8 +49,9 @@ ActiveRecord::Schema.define(:version => 20121220192354) do
     t.integer  "aggression"
     t.integer  "marking"
     t.integer  "balance"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+    t.string   "profile_image_url"
   end
 
   add_index "players", ["club_id"], :name => "index_players_on_club_id"

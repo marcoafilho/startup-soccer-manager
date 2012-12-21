@@ -1,6 +1,7 @@
 .navbar
   .navbar-inner
-    = link_to t('app.name'), root_path, class: "brand"
+    = link_to root_path, class: "brand" do
+      = t('app.name')
     ul.nav
       li class="#{ active_controller("matches") }" = link_to Match.model_name.human.pluralize, matches_path
       li class="#{ active_controller("clubs")   }" = link_to Club.model_name.human.pluralize, clubs_path

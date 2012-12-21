@@ -1,0 +1,26 @@
+script#show_player_template type="text-template"
+  td colspan="5"
+    .player-card-container
+      .player-card
+        .profile.padded
+          .picture
+            img class="img-polaroid"
+          .name
+            strong <%= fullName() %>
+          .age
+            <%= age() %> 
+            = t('common.prompts.age')
+          .gender
+            <%= displayGender() %>
+          .club
+            <%= displayClubName() %>
+          .number
+            = "#{t('.shirt')} "
+            | #<%= get('number') %>
+        .skills.padded
+          h3= Player.human_attribute_name(:skills)
+        .field.padded
+          .position
+            strong
+              <%= get('position') %>
+          = image_tag "soccer-field.png"

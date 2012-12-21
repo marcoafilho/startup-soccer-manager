@@ -1,14 +1,13 @@
 script#player_template type="text/template"
-  td
-    <%= get('last_name') %>
-  td
-    <%= get('first_name') %>
-  td
-    <%= get('position') %>
-  td
-    <%= get('number') %>
-  td
-    <%= average() %>
+  td.clickable
+    <%= formattedName() %>
+  td.clickable
+    <%= displayClubName() %>
+  td.position.clickable
+    strong
+      <%= displayPosition() %>
+  td.clickable
+    <%= displayAverage() %>
   td
     .btn-group
       a.btn.btn-small.btn-edit href="#<%= id %>/edit"
