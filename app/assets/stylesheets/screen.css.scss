@@ -12,10 +12,10 @@ body {
   margin-top: 20px;
   padding: 20px 20px;
   
-  -moz-box-shadow: 5px 0px 0px 0px;
-  -webkit-box-shadow: 5px 0px 0px 0px;
-  border-radius: 5px 0px 0px 0px;
   // TODO Maybe use compass for cross-browser fixes  
+  -moz-border-radius: 5px 0px 0px 0px;
+  -webkit-border-radius: 5px 0px 0px 0px;
+  border-radius: 5px 0px 0px 0px;
   -moz-box-shadow: 5px 5px 2px #333;
   -webkit-box-shadow: 5px 5px 2px #333;
   box-shadow: 5px 5px 2px #333;
@@ -23,6 +23,12 @@ body {
 
 .content {
   padding: 10px 40px;
+}
+
+.highlight {
+  -moz-box-shadow: 0 0 5px 5px #fff;
+  -webkit-box-shadow: 0 0 5px 5px #fff;
+  box-shadow: 0 0 5px 5px #fff;
 }
 
 .soccer-manager-form {

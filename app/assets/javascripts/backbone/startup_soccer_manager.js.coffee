@@ -13,3 +13,5 @@ window.StartupSoccerManager =
   
 window.template = (name) -> 
   _.template($('#' + name).html())
+  
+window.vent = _.extend({}, Backbone.Events)

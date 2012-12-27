@@ -25,14 +25,16 @@ class StartupSoccerManager.Views.Players.Player extends Backbone.View
         
   destroy: ->
     @model.destroy()
+    if @showPlayerView?
+      @showPlayerView.remove()
     @remove()
 
     return false
     
   openDetails: ->
-    view = new StartupSoccerManager.Views.Players.Show( model: @model )
+    @showPlayerView = new StartupSoccerManager.Views.Players.Show( model: @model )
     @$el.removeClass('inactive')
-    @$el.after(view.render().el)
+    @$el.after(@showPlayerView.render().el)
     @$el.next().fadeIn('slow')
   
   render: =>

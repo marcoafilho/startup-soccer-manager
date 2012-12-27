@@ -4,4 +4,8 @@ class Club < ActiveRecord::Base
   has_many :players
   
   validates :name, presence: true, uniqueness: true
+  
+  def as_json(options = {})
+    super(include: :players)
+  end
 end

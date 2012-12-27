@@ -19,6 +19,7 @@ en:
       new: New
     prompts:
       age: years old
+      shirt: Shirt
   layouts:
     navbar:
       languages: Languages
@@ -37,5 +38,3 @@ en:
         title: Startup Players
       new:
         title: New player
-      show:
-        shirt: Shirt

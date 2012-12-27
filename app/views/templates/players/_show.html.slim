@@ -15,7 +15,7 @@ script#show_player_template type="text-template"
           .club
             <%= displayClubName() %>
           .number
-            = "#{t('.shirt')} "
+            = "#{t('common.prompts.shirt')} "
             | #<%= get('number') %>
         .skills.padded
           h3= Player.human_attribute_name(:skills)
@@ -23,4 +23,3 @@ script#show_player_template type="text-template"
           .position
             strong
               <%= get('position') %>
-          = image_tag "soccer-field.png"

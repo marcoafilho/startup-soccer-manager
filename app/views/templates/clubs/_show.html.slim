@@ -1,0 +1,31 @@
+script#show_club_template type="text/template"
+  td colspan="3"
+    .club-card-container
+      .club-card
+        .profile.padded
+          .picture
+            img class="img-polaroid"
+          .name
+            strong
+              <%= get("name") %>
+          .foundation
+            <%= foundationYear() %>
+        .team.padded
+        .player-info-box.padded
+          .player-info
+            .player-info-header
+              .player-picture
+                img class="img-polaroid"
+              .player-info-content
+                .player-info-age
+                  span.age
+                  = " #{t('common.prompts.age')}"
+                .player-info-gender
+                  span.gender
+                .player-info-number  
+                  = "#{t('common.prompts.shirt')} "
+                  span.number  
+                
+            h4= t('.skills')
+            .skills
+        .field.padded

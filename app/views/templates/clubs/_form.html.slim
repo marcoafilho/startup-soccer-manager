@@ -1,8 +1,22 @@
-= form_for :club do |f|
-  = f.label :name
-  = f.text_field :name, value: "<%= name %>".html_safe
-  = f.label :founded_at
-  = f.text_field :founded_at, value: "<%= founded_at %>".html_safe
-  = f.submit
-  
-= link_to t(".back"), "#"
+h1= t('.title')
+.span6
+  = form_for :club, html: { class: "soccer-manager-form" } do |f|
+    fieldset
+      legend
+        = t('.legend.basics')
+      .control-group
+        = f.label :name
+        = f.text_field :name, value: "<%= name %>".html_safe
+      .control-group
+        = f.label :founded_at
+        .input-prepend
+          span class="add-on"
+            b class="icon-calendar"
+          = f.text_field :founded_at, class: "datepicker input-small", value: "<%= founded_at %>".html_safe
+      .margin-bottom
+    fieldset
+      legend
+        = t('.legend.team')
+    .form-actions
+      = f.submit class: "btn btn-primary"
+      = link_to t(".back"), "#", class: "btn"

@@ -1,0 +1,11 @@
+script#club_team_template type="text/template"
+  <% if (length != 0) { %>
+    .first-team
+      h4= t('.first_team')
+      .players
+    .reserve-team
+      h4= t('.reserve_team')
+      .players
+  <% } else { %>
+    = t('.no_players')
+  <% } %>
