@@ -1,14 +1,16 @@
 doctype html
 html
   head
-    title StartupSoccerManager
+    title= t('app.name')
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
 body
-  .navbar
-    .navbar-inner
-      ul.nav
-        li= link_to "Clubs", root_path
-        li= link_to "Player", players_path
-  = yield
+  .container
+    = render "layouts/navbar"
+    .content
+      = yield
+  javascript:
+    (function() {
+      Backbone.history.start();
+    })();

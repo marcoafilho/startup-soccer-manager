@@ -2,4 +2,39 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      player:
+        average: Average
+  app:
+    name: Soccer Manager
+  common:
+    genders:
+      male: Male
+      female: Female
+    manage:
+      actions: Actions
+      destroy: Delete
+      edit: Edit
+      new: New
+    prompts:
+      age: years old
+      shirt: Shirt
+  layouts:
+    navbar:
+      languages: Languages
+  templates:
+    players:
+      edit:
+        title: Edit player
+      form:
+        legend:
+          personal: Personal information
+          preferences: Game preferences
+          skills: Skills
+        helpers:
+          profile_picture: You can change you profile picture by clicking on the minifigure.
+      index:
+        title: Startup Players
+      new:
+        title: New player

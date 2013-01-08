@@ -1,0 +1,11 @@
+script#new_match_template type="text/template"
+  = form_for :match do |f|
+    = f.label :host_id
+    = f.select :host_id, Club.all.collect { |c| [c.name, c.id] }
+    = f.label :guest_id
+    = f.select :guest_id, Club.all.collect { |c| [c.name, c.id] }
+    = f.label :location
+    = f.text_field :location
+    = f.label :played_at
+    = f.text_field :played_at
+    = f.submit

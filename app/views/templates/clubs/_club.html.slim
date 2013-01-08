@@ -1,10 +1,11 @@
 script#club_template type="text/template"
+  td.clickable
+    <%= get("name") %>
+  td.clickable
+    <%= displayAverage() %>
   td
-    <%= name %>
-  td
-    <%= founded_at %>
-  td
-    a.btn.btn-edit href="#<%= id %>/edit"
-      = t('.edit')
-    a.btn.btn-danger.btn-destroy href="#<%= id %>"
-      = t('.destroy')
+    .btn-group
+      a.btn.btn-small.btn-edit href="#<%= id %>/edit"
+        = t('.edit')
+      a.btn.btn-small.btn-danger.btn-destroy href="#<%= id %>"
+        = t('.destroy')

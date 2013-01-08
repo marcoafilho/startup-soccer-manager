@@ -1,0 +1,18 @@
+script#match_template type="text/template"
+  td
+    <%= host_id %>
+  td
+    <%= host_score %> 
+    | x 
+    <%= guest_score %>
+  td
+    <%= guest_id %>
+  td
+    <%= location %>
+  td
+    <%= played_at %>
+  td
+    a.btn.btn-edit href="#<%= id %>/edit"
+      = t('.edit')
+    a.btn.btn-danger.btn-destroy href="#<%= id %>"
+      = t('.destroy')

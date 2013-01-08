@@ -1,12 +1,14 @@
 script#clubs_template type="text/template"
-  table.table
+  h1= t('.title')
+
+  table.table.clubs-table
     thead
       tr
-        th
+        th.span6
           = Club.human_attribute_name(:name)
-        th
-          = Club.human_attribute_name(:founded_at)
-        th
+        th.span1
+          = Club.human_attribute_name(:average)
+        th.span1
           = t('.actions')
     tbody
   = link_to t('.new'), "#new", class: "btn btn-primary"

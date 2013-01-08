@@ -1,0 +1,90 @@
+.club-card-container {
+  text-align: center;
+  .club-card {
+    display: inline-block;
+    text-align: center;
+  
+    .padded {
+      display: table-cell;
+      padding: 0 4px;
+      vertical-align: middle;
+    }
+  
+    .profile {
+      width: 180px;
+      .picture {
+        img {
+          border: 1px #ccc solid;
+        }
+      } 
+    }
+  
+    .team {
+      text-align: left;
+      width: 220px;
+      
+      .players {
+          width: 220px;
+        .player {
+          padding: 1px 10px;
+          width: 200px;
+          .player-name {
+            display: inline-block;
+            overflow: hidden;
+            width: 170px;
+          }
+          
+          .player-position {
+            display: inline-block;            
+            width: 30px;
+          }
+          
+          &:hover {
+            background: #DDD;
+          }
+        }
+      }
+    }
+    
+    .skills {
+      width: 220px;
+      .skill-name {
+        padding: 0 5px;
+        width: 85px;
+      }
+    }
+    
+    .player-info-box {
+      text-align: left;
+      width: 240px;
+      .player-info {
+        margin: 0 auto;
+        width: 230px;
+        .player-info-header {
+          .player-picture {
+            display: inline-block;
+            img {
+              width: 48px;
+              height: 48px;
+            }
+          }
+          .player-info-content {
+            display: inline-block;
+            font-size: 0.9em;
+            height: 58px;
+            margin: 0 5px;
+            vertical-align: middle;
+            
+            div {
+              line-height: 18px;
+            }
+          }
+        }
+      }
+    }
+    
+    .position {
+      font-weight: bolder;
+    }
+  }
+}

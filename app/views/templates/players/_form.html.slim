@@ -1,27 +1,67 @@
-= form_for :player do |f|
-  = f.label :last_name
-  = f.text_field :last_name, value: "<%= last_name %>".html_safe
-  = f.label :first_name
-  = f.text_field :first_name, value: "<%= first_name %>".html_safe
-  = f.label :born_at
-  = f.text_field :born_at, value: "<%= born_at %>".html_safe
-  = f.label :number
-  = f.number_field :number, min: 0, max: 99, value: "<%= number %>".html_safe
-  = f.label :position
-  = f.select :position, Player::POSITIONS.collect { |k, v| ["#{k} - #{v}", k] }
-  = f.label :gender
-  = f.radio_button :gender, "true"
-  = f.label :gender_true, t('.male')
-  = f.radio_button :gender, "false"
-  = f.label :gender_false, t('.female')
-  = f.label :acceleration
-  = f.number_field :acceleration, min: 0, max: 10, value: "<%= acceleration %>".html_safe
-  = f.label :aggression
-  = f.number_field :aggression, min: 0, max: 10, value: "<%= aggression %>".html_safe
-  = f.label :balance
-  = f.number_field :balance, min: 0, max: 10, value: "<%= balance %>".html_safe
-  = f.label :marking
-  = f.number_field :marking, min: 0, max: 10, value: "<%= marking %>".html_safe
-  = f.label :stamina
-  = f.number_field :stamina, min: 0, max: 10, value: "<%= stamina %>".html_safe
-  = f.submit
+.player-previewer
+  table
+    tbody
+.span7
+  = form_for :player, html: { class: "soccer-manager-form" } do |f|
+    fieldset
+      legend= t('.legend.personal')
+      span.help-block
+        em
+          = t('.helpers.profile_picture')
+      .control-group.inline-block.padded-right
+        = f.label :first_name
+        = f.text_field :first_name, value: "<%= first_name %>".html_safe
+      .control-group.inline-block.padded-left
+        = f.label :last_name
+        = f.text_field :last_name, value: "<%= last_name %>".html_safe
+      .control-group
+        = f.label :gender
+        = f.label :gender_true, class: "radio inline padded-right" do
+          <% if ((gender == "true") || gender == true) { %>
+            = f.radio_button :gender, "true", checked: "checked"
+          <% } else { %>
+            = f.radio_button :gender, "true"
+          <% } %>
+          = t('common.genders.male')
+        = f.label :gender_false, class: "radio inline padded-left" do
+          <% if (gender == "false" || gender == false) { %>
+            = f.radio_button :gender, "false", checked: "checked"
+          <% } else { %>
+            = f.radio_button :gender, "false"
+          <% } %>
+          = t('common.genders.female')
+      .control-group
+        = f.label :born_at
+        .input-prepend
+          span class="add-on"
+            b class="icon-calendar"
+          = f.text_field :born_at, class: "datepicker input-small", value: "<%= born_at.substring(0,10) %>".html_safe
+      .margin-bottom
+    fieldset
+      legend= t('.legend.preferences')
+      .control-group.inline-block.padded-right
+        = f.label :position
+        = f.select :position, grouped_options_for_select(Player::POSITIONS)
+      .control-group.inline-block.padded-left
+        = f.label :number
+        = f.number_field :number, class: "input-mini", min: 1, max: 99, value: "<%= number %>".html_safe
+    fieldset
+      legend= t('.legend.skills')
+      .control-group.inline-block.padded-right
+        = f.label :acceleration
+        = f.number_field :acceleration, class: "input-small", min: 0, max: 10, value: "<%= acceleration %>".html_safe
+      .control-group.inline-block.padded-left.padded-right
+        = f.label :aggression
+        = f.number_field :aggression, class: "input-small", min: 0, max: 10, value: "<%= aggression %>".html_safe
+      .control-group.inline-block.padded-left.padded-right
+        = f.label :balance
+        = f.number_field :balance, class: "input-small", min: 0, max: 10, value: "<%= balance %>".html_safe
+      .control-group.inline-block.padded-left.padded-right
+        = f.label :marking
+        = f.number_field :marking, class: "input-small", min: 0, max: 10, value: "<%= marking %>".html_safe
+      .control-group.inline-block.padded-left.padded-right
+        = f.label :stamina
+        = f.number_field :stamina, class: "input-small", min: 0, max: 10, value: "<%= stamina %>".html_safe
+    .form-actions
+      = f.submit class: 'btn btn-primary'
+      = link_to t('.back'), '#', class: "btn"

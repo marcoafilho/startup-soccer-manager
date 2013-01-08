@@ -1,7 +1,7 @@
 class StartupSoccerManager.Routers.PlayersRouter extends Backbone.Router
   initialize: (options) ->
     @players = new StartupSoccerManager.Collections.Players()
-    @players.reset options.players
+    @players.reset(options.players)
   
   routes:
     "index"   : "index"

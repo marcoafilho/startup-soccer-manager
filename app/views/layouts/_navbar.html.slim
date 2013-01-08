@@ -1,0 +1,17 @@
+.navbar
+  .navbar-inner
+    = link_to root_path, class: "brand" do
+      = t('app.name')
+    ul.nav
+      li class="#{ active_controller("matches") }" = link_to Match.model_name.human.pluralize, matches_path
+      li class="#{ active_controller("clubs")   }" = link_to Club.model_name.human.pluralize, clubs_path
+      li class="#{ active_controller("players") }" = link_to Player.model_name.human.pluralize, players_path
+    ul.nav.pull-right
+      li.divider-vertical
+      li.dropdown
+        = link_to "#", class: "dropdown-toggle" do
+          b.icon-globe
+          = "#{t('.languages')} "
+          b.caret
+        ul.dropdown-menu
+          li Example

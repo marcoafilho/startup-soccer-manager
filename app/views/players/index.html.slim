@@ -1,14 +1,13 @@
-h1 Players
-
 #players
 
 = render "templates/players/index"
 = render "templates/players/player"
+= render "templates/players/show"
+= render "templates/players/skills"
 = render "templates/players/new"
 = render "templates/players/edit"
 
 javascript:
   (function(){
     window.router = new StartupSoccerManager.Routers.PlayersRouter( { players: #{@players.to_json.html_safe} } );
-    Backbone.history.start();
   })();

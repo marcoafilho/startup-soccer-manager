@@ -1,6 +1,73 @@
-// Place all the styles related to the Clubs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  background: url("grass-texture-24x24.jpg");
+  background: url("grass-texture-2-48x48.png");
+  background-repeat: repeat;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.container {
+  background-color: white;
+  margin-top: 20px;
+  padding: 20px 20px;
+  
+  // TODO Maybe use compass for cross-browser fixes  
+  -moz-border-radius: 5px 0px 0px 0px;
+  -webkit-border-radius: 5px 0px 0px 0px;
+  border-radius: 5px 0px 0px 0px;
+  -moz-box-shadow: 5px 5px 2px #333;
+  -webkit-box-shadow: 5px 5px 2px #333;
+  box-shadow: 5px 5px 2px #333;
+}
+
+.content {
+  padding: 10px 40px;
+}
+
+.highlight {
+  -moz-box-shadow: 0 0 5px 5px #fff;
+  -webkit-box-shadow: 0 0 5px 5px #fff;
+  box-shadow: 0 0 5px 5px #fff;
+}
+
+.soccer-manager-form {
+  .inline-block {
+    display: inline-block;
+  }
+
+  .padded-right {
+    margin-right: 10px;
+  }
+  
+  .padded-left {
+    margin-left: 10px;
+  }
+  
+  .margin-bottom {
+    margin-bottom: 20px;
+  }
+}
+
+.input-prepend {
+  .add-on {
+    margin-top: 1px;
+  }
+}
+
+.form-actions {
+  .btn {
+    margin: 0px 1px;
+  }
+}
+
+.navbar {
+  .navbar-inner {
+    .brand {
+      background: url('soccer-ball.png') no-repeat;
+      background-position: 0 48%;
+      margin-left: 5px;
+      padding-left: 20px;
+    }
+  }
 }
