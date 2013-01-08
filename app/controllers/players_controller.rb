@@ -2,7 +2,7 @@ class PlayersController < ApplicationController
   respond_to :html, :json
   
   def index
-    @players = Player.all
+    @players = Player.order(:last_name)
     
     respond_with @players
   end

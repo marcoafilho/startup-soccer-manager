@@ -26,6 +26,8 @@ class Player < ActiveRecord::Base
   
   belongs_to :club
   
+  scope :available, where('club_id IS NULL')
+  
   validates :first_name, presence: true
   validates :last_name, presence: true
   
