@@ -1,0 +1,12 @@
+script#club_edit_team_player_template type="text/template"
+  .player-name.span2
+    <%= formattedName() %>
+  .player-position.span1
+    strong
+      <%= displayPosition() %>
+  .actions.span2
+    .btn-group
+      a.btn.btn-mini.btn-edit
+        = t('.edit')
+      a.btn.btn-mini.btn-danger.btn-dissociate
+        = t('.dissociate')

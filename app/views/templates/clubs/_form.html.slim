@@ -18,18 +18,11 @@ h1= t('.title')
       legend
         = t('.legend.team')
       .team-players
-        .player.row
-          .player-name.span2
-          .player-position.span2
-          .actions.span2
-            .btn-group
-              a class="btn btn-mini"
-                = t('.edit')
-              a class="btn btn-mini btn-danger"
-                = t('.disassociate')
-      .control-group
+      .control-group.span4
         = f.label :players
         = f.select :players, Player.available.collect { |p| [p.full_name, p.id] }, { include_blank: true }
+        a.btn.btn-success.pull-right.add-player
+          = t('.add')
     .form-actions
       = f.submit class: "btn btn-primary"
       = link_to t(".back"), "#", class: "btn"

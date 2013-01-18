@@ -23,6 +23,7 @@ class Player < ActiveRecord::Base
   }
   
   attr_accessible :acceleration, :aggression, :balance, :born_at, :first_name, :gender, :last_name, :marking, :number, :position, :profile_image_url, :stamina
+  attr_accessible :club_id
   
   belongs_to :club
   

@@ -8,7 +8,9 @@ class PlayersController < ApplicationController
   end
   
   def show
+    @player = Player.find(params[:id])
     
+    respond_with @player
   end
   
   def new
@@ -32,6 +34,7 @@ class PlayersController < ApplicationController
   def update
     @player = Player.find(params[:id])
     
+    @player.update_attribute :club_id, params[:player][:club_id]
     if @player.update_attributes params[:player]
       respond_with @player
     end

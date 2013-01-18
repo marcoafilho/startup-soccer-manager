@@ -1,6 +1,8 @@
 class StartupSoccerManager.Models.Player extends Backbone.Model
   paramRoot: 'player'
   
+  urlRoot: '/players'
+  
   defaults:
     first_name: null
     last_name: null
