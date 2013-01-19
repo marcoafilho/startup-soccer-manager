@@ -15,7 +15,9 @@ class StartupSoccerManager.Views.Matches.Edit extends Backbone.View
       guest_score: @$('#match_guest_score').val()
       host_score: @$('#match_host_score').val()
             
-    @model.save(@model.toJSON())
+    @model.save(@model.toJSON(),
+      success: window.location.hash = ''
+    )
 
   render: ->
     @$el.html( template(@template)(@model) )
