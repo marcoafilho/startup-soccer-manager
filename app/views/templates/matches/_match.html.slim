@@ -5,7 +5,7 @@ script#match_template type="text/template"
     <% if (playDate() > new Date()) { %>
       = t('.scheduled')
     <% } else { %>
-      <% if (isNaN(get("host_score")) || isNaN(get("guest_score"))) { %>
+      <% if (get("host_score") == null || get("guest_score") == null) { %>
         = t('.waiting_results')
       <% } else { %>
         <%= get("host_score") %> 
