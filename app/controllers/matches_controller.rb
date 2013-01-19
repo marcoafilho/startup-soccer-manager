@@ -2,7 +2,7 @@ class MatchesController < ApplicationController
   respond_to :html, :json
   
   def index
-    @matches = Match.all
+    @matches = Match.order("played_at DESC")
     
     respond_with @matches
   end
