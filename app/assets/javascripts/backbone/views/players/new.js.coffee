@@ -64,7 +64,7 @@ class StartupSoccerManager.Views.Players.New extends Backbone.View
 
   newProfileImage: ->
     @currentImageId ||= 1
-    @currentImageId = 1 if @currentImageId == 7 + 1 # Images availables plus one to count back
+    @currentImageId = 1 if @currentImageId == 11 + 1 # Images availables plus one to count back
 
     @modelObserver.set(profile_image_url: "assets/players/" + @modelObserver.displayGender() + "/" + @currentImageId++ + ".png")
     

@@ -1,5 +1,5 @@
 class Club < ActiveRecord::Base
-  attr_accessible :founded_at, :name
+  attr_accessible :founded_at, :name, :club_image_url
   
   has_many :players, order: :last_name
   

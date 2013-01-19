@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121221180050) do
+ActiveRecord::Schema.define(:version => 20130119214953) do
 
   create_table "clubs", :force => true do |t|
-    t.string   "name",       :null => false
+    t.string   "name",           :null => false
     t.date     "founded_at"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "club_image_url"
   end
 
   add_index "clubs", ["name"], :name => "index_clubs_on_name", :unique => true

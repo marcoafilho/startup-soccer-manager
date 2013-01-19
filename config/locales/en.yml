@@ -27,6 +27,9 @@ en:
     clubs:
       edit:
         title: Edit club
+      form:
+        helpers:
+          club_picture: You can change your club logo by clicking on the crest.
       index:
         title: Startup Clubs
       new:

@@ -15,7 +15,7 @@ class StartupSoccerManager.Models.Club extends Backbone.Model
     
   validate: (attrs) ->
     "Name shouldn't be empty" if attrs.name? and attrs.name == ""
-    
+        
   foundationYear: ->
     @get("founded_at").substring(0, 4)
     

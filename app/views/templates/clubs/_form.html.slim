@@ -1,18 +1,26 @@
-h1= t('.title')
 .span6
   = form_for :club, html: { class: "soccer-manager-form" } do |f|
+    fieldset
+      legend
+        = t('.legend.logo')
+      .control-group
+        .club-logo
+          img.img-polaroid.clickable src='<%= get("club_image_url") %>'
+          span.help-block
+            em
+              = t('.helpers.club_picture')
     fieldset
       legend
         = t('.legend.basics')
       .control-group
         = f.label :name
-        = f.text_field :name, value: "<%= name %>".html_safe
+        = f.text_field :name, value: "<%= get(\"name\") %>".html_safe
       .control-group
         = f.label :founded_at
         .input-prepend
           span class="add-on"
             b class="icon-calendar"
-          = f.text_field :founded_at, class: "datepicker input-small", value: "<%= founded_at %>".html_safe
+          = f.text_field :founded_at, class: "datepicker input-small", value: "<%= get(\"founded_at\") %>".html_safe
       .margin-bottom
     fieldset
       legend

@@ -8,6 +8,7 @@ class StartupSoccerManager.Views.Clubs.Edit extends Backbone.View
   events:
     'submit': 'submit'
     'click .add-player': 'associatePlayer'
+    'click img.img-polaroid': 'rebuildLogo'
     
   loadCalendars: ->
     @$('.datepicker').datepicker( format: "yyyy-mm-dd", viewMode: 'years')
@@ -32,6 +33,14 @@ class StartupSoccerManager.Views.Clubs.Edit extends Backbone.View
           @addPlayer(player)
       )
       
+  rebuildLogo: (e) ->
+    @newLogo()
+
+  newLogo: ->
+    @currentImageId ||= 1
+    @currentImageId = 1 if @currentImageId == 8 + 1 # Images availables plus one to count back
+
+    @$('.club-logo img').attr('src', "assets/clubs/" + @currentImageId++ + ".png")  
     
   submit: (e) ->
     e.preventDefault()
@@ -39,6 +48,7 @@ class StartupSoccerManager.Views.Clubs.Edit extends Backbone.View
     @model.set 
       name: $('#club_name').val()
       founded_at: $('#club_founded_at').val()
+      club_image_url: $('.club-logo img').attr('src')
 
     @model.save( @model.toJSON(),
       success: (club) =>
@@ -50,7 +60,7 @@ class StartupSoccerManager.Views.Clubs.Edit extends Backbone.View
     )
       
   render: ->
-    @$el.html( template(@template)(@model.toJSON()) )
+    @$el.html( template(@template)(@model) )
     @loadClubPlayers()
     @loadCalendars()
     

@@ -7,7 +7,7 @@ class StartupSoccerManager.Views.Matches.Edit extends Backbone.View
   
   events:
     "submit": "submit"
-        
+            
   submit: (e) ->
     e.preventDefault()
     

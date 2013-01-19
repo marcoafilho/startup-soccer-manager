@@ -12,6 +12,9 @@ class StartupSoccerManager.Views.Matches.New extends Backbone.View
     super(collection)
     @model = new @collection.model()
     
+  loadCalendars: ->
+    @$('.datepicker').datepicker( format: "yyyy-mm-dd", viewMode: 'years')
+        
   submit: (e) ->
     e.preventDefault()
     
@@ -25,5 +28,6 @@ class StartupSoccerManager.Views.Matches.New extends Backbone.View
       
   render: ->
     @$el.html( template(@template)(@model.toJSON()) )
+    @loadCalendars()
     
     this
