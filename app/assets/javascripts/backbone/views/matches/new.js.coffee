@@ -25,7 +25,7 @@ class StartupSoccerManager.Views.Matches.New extends Backbone.View
       played_at: @$('#match_played_at').val()  
     
     @collection.create(@model.toJSON(),
-      success: window.location.hash = ''
+      success: window.location.hash = '/matches'
     )
       
   render: ->
