@@ -1,3 +1,50 @@
 // Place all the styles related to the Matches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.against-symbol {
+  display: inline-block;
+  height: 20px;
+  line-height: 10px;
+  vertical-align: middle;
+}
+
+#matches_carousel {
+  .carousel-inner {
+    background-image: url(match-background.png);
+    background-position: center;
+    color: white;
+    height: 300px;
+    line-height: 300px;
+    vertical-align: middle;
+
+    // TODO Maybe use compass for cross-browser fixes  
+    -moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .club {
+    line-height: 230px;
+    .club-name {
+      font-size: 1.5em;
+      font-weight: bold;
+      line-height: 1.5em;
+      padding: 10px 0;
+    }
+  }
+  .club-right {
+    text-align: right;
+  }
+  .club-left {
+    text-align: left;    
+  }
+  .match-details {
+    text-align: center;
+  }
+  .versus {
+    font-size: 8em;
+    font-weight: bolder;
+    line-height: 300px;
+    text-align: center;
+    vertical-align: middle;
+  }
+}

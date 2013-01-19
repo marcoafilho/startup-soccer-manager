@@ -1,7 +1,21 @@
 script#edit_match_template type="text/template"
-  = form_for :match do |f|
-    = f.label :host_score
-    = f.number_field :host_score, min: 0, value: "<%= host_score %>".html_safe
-    = f.label :guest_score
-    = f.number_field :guest_score, min: 0, value: "<%= guest_score %>".html_safe
-    = f.submit
+  h1= t('.title')
+  .played-at
+    = "#{t('.played_at')}: "
+    <%= get("played_at").substring(0, 10) %>
+  .span7
+    = form_for :match, html: { class: "soccer-manager-form" } do |f|
+      fieldset
+        legend= t('.set_results')
+        .control-group.inline-block.padded-right
+          label for="match_host_score"
+            <%= get("host").get("name") %> 
+          = f.number_field :host_score, class: "input-small", min: 0, value: "<%= get(\"host_score\") %>".html_safe
+        i.icon-remove.against-symbol
+        .control-group.inline-block.padded-left          
+          label for="match_guest_score"
+            <%= get("host").get("name") %> 
+          = f.number_field :guest_score, class: "input-small", min: 0, value: "<%= get(\"guest_score\") %>".html_safe
+        .form-actions
+          = f.submit class: 'btn btn-primary'
+          = link_to t('.back'), '#', class: "btn"

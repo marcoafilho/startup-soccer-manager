@@ -18,6 +18,6 @@ class StartupSoccerManager.Views.Matches.Edit extends Backbone.View
     @model.save(@model.toJSON())
 
   render: ->
-    @$el.html( template(@template)(@model.toJSON()) )
+    @$el.html( template(@template)(@model) )
     
     return this

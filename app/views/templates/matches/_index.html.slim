@@ -1,4 +1,11 @@
 script#matches_template type="text/template"
+  #matches_carousel.carousel.slide
+    .carousel-inner
+    a.carousel-control.left href="#matches_carousel" data-slide="prev" &lsaquo;
+    a.carousel-control.right href="#matches_carousel" data-slide="next" &rsaquo;
+    
+  h1= t('.title')
+  
   table.table
     thead
       tr
@@ -16,4 +23,4 @@ script#matches_template type="text/template"
           = t('.actions')
     tbody
     
-  = link_to t('.new'), "#new"
+  = link_to t('common.manage.new'), "#new", class: "btn btn-primary"

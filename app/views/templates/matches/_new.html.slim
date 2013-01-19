@@ -1,11 +1,25 @@
 script#new_match_template type="text/template"
-  = form_for :match do |f|
-    = f.label :host_id
-    = f.select :host_id, Club.all.collect { |c| [c.name, c.id] }
-    = f.label :guest_id
-    = f.select :guest_id, Club.all.collect { |c| [c.name, c.id] }
-    = f.label :location
-    = f.text_field :location
-    = f.label :played_at
-    = f.text_field :played_at
-    = f.submit
+  h1= t('.title')
+
+  .span7
+    = form_for :match, html: { class: "soccer-manager-form" } do |f|
+      fieldset
+        legend= t('.legend.details')
+        .control-group.inline-block.padded-right          
+          = f.label :host_id
+          = f.select :host_id, Club.all.collect { |c| [c.name, c.id] }
+        .control-group.inline-block.padded-left
+          = f.label :guest_id
+          = f.select :guest_id, Club.all.collect { |c| [c.name, c.id] }
+        .control-group
+          = f.label :location
+          = f.text_field :location
+        .control-group
+          = f.label :played_at
+          .input-prepend
+            span.add-on
+              b.icon-calendar
+            = f.text_field :played_at, class: "datepicker input-small", value: "<%= played_at.substring(0,10) %>".html_safe
+        .form-actions
+          = f.submit class: 'btn btn-primary'
+          = link_to t('.back'), '#', class: "btn"

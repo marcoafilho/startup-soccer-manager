@@ -19,11 +19,11 @@ class StartupSoccerManager.Views.Matches.New extends Backbone.View
       host_id: @$('#match_host_id :selected').val()
       guest_id: @$('#match_guest_id :selected').val()
       location: @$('#match_location').val()
-      played_at: @$('#match_played_at').val()
-      
+      played_at: @$('#match_played_at').val()  
+    
     @collection.create(@model.toJSON())
-  
+      
   render: ->
     @$el.html( template(@template)(@model.toJSON()) )
     
-    return this
+    this

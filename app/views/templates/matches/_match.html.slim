@@ -1,18 +1,27 @@
 script#match_template type="text/template"
   td
-    <%= host_id %>
+    <%= get("host").get("name") %>
   td
-    <%= host_score %> 
-    | x 
-    <%= guest_score %>
+    <% if (playDate() > new Date()) { %>
+      = t('.scheduled')
+    <% } else { %>
+      <% if (isNaN(get("host_score")) || isNaN(get("guest_score"))) { %>
+        = t('.waiting_results')
+      <% } else { %>
+        <%= get("host_score") %> 
+        | x 
+        <%= get("guest_score") %>
+      <% } %>
+    <% } %>
   td
-    <%= guest_id %>
+    <%= get("guest").get("name") %>
   td
-    <%= location %>
+    <%= get("location") %>
   td
-    <%= played_at %>
+    <%= get("played_at").substring(0, 10) %>
   td
-    a.btn.btn-edit href="#<%= id %>/edit"
-      = t('.edit')
-    a.btn.btn-danger.btn-destroy href="#<%= id %>"
-      = t('.destroy')
+    .btn-group
+      a.btn.btn-small.btn-edit href="#<%= id %>/edit"
+        = t('.edit')
+      a.btn.btn-small.btn-danger.btn-destroy href="#<%= id %>"
+        = t('.destroy')

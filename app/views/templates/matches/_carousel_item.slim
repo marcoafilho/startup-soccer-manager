@@ -1,0 +1,14 @@
+script#matches_carousel_item type="text/template"
+  .match-details
+    .club.club-right.span3
+      img.club-picture src='<%= get("host").get("club_image_url") %>'
+      .club-name
+        <%= get("host").get("name") %>
+    .versus.span4
+      <%= get("host_score") %> 
+      | X 
+      <%= get("guest_score") %>
+    .club.club-left.span3
+      img.club-picture src='<%= get("host").get("club_image_url") %>'
+      .club-name
+        <%= get("guest").get("name") %>

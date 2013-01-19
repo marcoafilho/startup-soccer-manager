@@ -15,6 +15,6 @@ class StartupSoccerManager.Views.Matches.Match extends Backbone.View
     return false
   
   render: ->
-    @$el.html( template(@template)(@model.toJSON()) )
+    @$el.html( template(@template)(@model) )
     
     return this

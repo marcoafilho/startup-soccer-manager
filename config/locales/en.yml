@@ -24,6 +24,23 @@ en:
     navbar:
       languages: Languages
   templates:
+    clubs:
+      edit:
+        title: Edit club
+      index:
+        title: Startup Clubs
+      new:
+        title: New club
+      team:
+        no_players: No Players. Go add some!
+    matches:
+      edit:
+        played_at: Played at
+        title: Edit match
+      index:
+        title: Startup Matches
+      new:
+        title: New match
     players:
       edit:
         title: Edit player
