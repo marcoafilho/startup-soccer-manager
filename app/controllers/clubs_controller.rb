@@ -3,7 +3,7 @@ class ClubsController < ApplicationController
 
   # GET /clubs or /clubs.json
   def index
-    @clubs = Club.all
+    @clubs = Club.where("name = #{params[:name]}")
   end
 
   # GET /clubs/1 or /clubs/1.json
