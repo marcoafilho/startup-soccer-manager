@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  founded_at: 2021-01-25
+  club_image_url: MyString
+
+two:
+  name: MyString
+  founded_at: 2021-01-25
+  club_image_url: MyString
