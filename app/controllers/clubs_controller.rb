@@ -66,4 +66,8 @@ class ClubsController < ApplicationController
     def club_params
       params.require(:club).permit(:name, :founded_at, :club_image_url)
     end
+
+    def similar_method
+      params.require(:club).permit(:name, :founded_at, :club_image_url)
+    end
 end
